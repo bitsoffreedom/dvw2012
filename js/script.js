@@ -1,9 +1,5 @@
 $("section:not('.page')").hide();
-/*
-$(".standpunt a").each(function(){
- 	$(this).attr('rel', $(this).attr('href'));	
-});
-*/
+
 $('#overlay').overlay({
 	fixed: false,
 	top: 0,
@@ -15,8 +11,7 @@ $('#overlay').overlay({
 });
 
 
-$(".standpunt a, .eindoordeel a").click(function(e){
-	//e.preventDefault();
+$(".standpunt a, .eindoordeel td:not(':first-child') a").click(function(e){
 	
 	var d = $( '<div class="inner">' );
 	var t = $(e.target).attr('href');
@@ -31,14 +26,11 @@ $(".standpunt a, .eindoordeel a").click(function(e){
 		$('#overlay').scrollTop(0);
 	});
 	
-	$('#overlay').append(d);		
-	
-	$('#overlay').overlay().load();
-	
+	$('#overlay').append(d);	
+	$('#overlay').overlay().load();	
 });
 
 $("nav.sub a").click(function(e){
-	//e.preventDefault();
 	
 	var d = $( '<div class="inner">' );
 	var t = $(e.target).attr('href');
@@ -54,23 +46,23 @@ $("nav.sub a").click(function(e){
 });
 
 //table cell behaviors	
-	$('#overzicht td[class!=onderwerp]').bind("mouseenter",function() {
+$('#overzicht td[class!=onderwerp]').bind("mouseenter",function() {
+	
+	// highlight headers on cell over
+	$('#overzicht th').removeClass('highlight'); 
 		
-		// highlight headers on cell over
-		$('#overzicht th').removeClass('highlight'); 
-			
-		var index = $(this).parent().children().index(this);	
-		 $('#overzicht').each(function() {
-		  $(':nth-child(' + (index + 1) + ')' ,this).addClass('highlight');
-		});
-		
-		//remove highlights when not needed
-		}).bind("mouseleave",function(){
-			  var index = $(this).parent().children().index(this);	
-				$('#overzicht').each(function() {
-					  $(':nth-child(' + (index + 1) + ')' ,this).removeClass('highlight');
-				})
+	var index = $(this).parent().children().index(this);	
+	 $('#overzicht').each(function() {
+	  $(':nth-child(' + (index + 1) + ')' ,this).addClass('highlight');
 	});
+	
+	//remove highlights when not needed
+	}).bind("mouseleave",function(){
+		  var index = $(this).parent().children().index(this);	
+			$('#overzicht').each(function() {
+				  $(':nth-child(' + (index + 1) + ')' ,this).removeClass('highlight');
+			})
+});
 	
 //fake click to load page with relevant section open if hash in URL	
 if (document.location.hash != '') {
