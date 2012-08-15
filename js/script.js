@@ -9,13 +9,13 @@ $('#overlay').overlay({
 	top: 0,
 	left: 0,
 	onClose: function(){
-		var o = this.getOverlay();
+		var o = this.getOverlay();		
 		o.find('.inner').remove();
 	}
 });
 
 
-$(".standpunt a").click(function(e){
+$(".standpunt a, .eindoordeel a").click(function(e){
 	//e.preventDefault();
 	
 	var d = $( '<div class="inner">' );
@@ -25,13 +25,16 @@ $(".standpunt a").click(function(e){
 	$(t).closest('section').find('aside').clone().appendTo(d);
 	$(t).clone().appendTo(d);
 	$(t).next().clone().appendTo(d);
-	$(t).closest('section').find('a.terug').clone().appendTo(d).click(function() {
+	$(t).closest('section').find('a.terug').clone().appendTo(d).click(function(e) {
 		$('#overlay').overlay().close();
+		e.preventDefault();
+		$('#overlay').scrollTop(0);
 	});
 	
-	$('#overlay').append(d);
+	$('#overlay').append(d);		
 	
-	$('#overlay').overlay().load();	
+	$('#overlay').overlay().load();
+	
 });
 
 $("nav.sub a").click(function(e){
@@ -44,6 +47,8 @@ $("nav.sub a").click(function(e){
 	$('#overlay').append(d);
 	$('#overlay').find('a.terug').click(function() {
 		$('#overlay').overlay().close();
+		e.preventDefault();
+		$('#overlay').scrollTop(0);
 	});	
 	$('#overlay').overlay().load();	
 });

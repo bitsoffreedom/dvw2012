@@ -1,28 +1,32 @@
 @font-face {
   	font-family: DINWeb-Cond;
   	src: url("DINWeb-Cond.eot");
-  	src: url("DINWeb-Cond.woff") format("woff");
+  	src: 	url('DINWeb-Cond.eot?#iefix') format('embedded-opentype'),
+  			url("DINWeb-Cond.woff") format("woff");
   	font-weight: normal;
     font-style: normal;
 }
 @font-face {
   	font-family: DINWeb-Cond;
   	src: url("DINWeb-CondIta.eot");
-  	src: url("DINWeb-CondIta.woff") format("woff");
+  	src: 	url('DINWeb-CondIta.eot?#iefix') format('embedded-opentype'),
+  			url("DINWeb-CondIta.woff") format("woff");
   	font-weight: normal;
     font-style: italic;
 }
 @font-face {
   	font-family: DINWeb-Cond;
   	src: url("DINWeb-CondBold.eot");
-  	src: url("DINWeb-CondBold.woff") format("woff");
+  	src: 	url('DINWeb-CondBold?#iefix') format('embedded-opentype'),
+  			url("DINWeb-CondBold.woff") format("woff");
   	font-weight: bold;
     font-style: normal;
 }
 @font-face {
   	font-family: DINWeb-Cond;
   	src: url("DINWeb-CondBoldIta.eot");
-  	src: url("DINWeb-CondBoldIta.woff") format("woff");
+  	src:url('DINWeb-CondBoldIta?#iefix') format('embedded-opentype'), 
+  		url("DINWeb-CondBoldIta.woff") format("woff");
   	font-weight: bold;
     font-style: italic;
 }
@@ -236,16 +240,17 @@ html, body {min-height: 100%;}
 
 body {
 	background: #111;
-	margin: 20px 0 0 0;
+	margin: 0px;
+	padding: 20px 0 0 0;
 	line-height: 25px;
 	
 	
-background: url(../images/bbbackground.png), -moz-linear-gradient(top, #4e4e4e 0%, #111111 300px, #111111 100%); /* FF3.6+ */
-background: url(../images/bbbackground.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(300px,#111111), color-stop(100%,#111111)); /* Chrome,Safari4+ */
-background: url(../images/bbbackground.png), -webkit-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* Chrome10+,Safari5.1+ */
-background: url(../images/bbbackground.png), -o-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* Opera 11.10+ */
-background: url(../images/bbbackground.png), -ms-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* IE10+ */
-background: url(../images/bbbackground.png), linear-gradient(to bottom, #4e4e4e 0%,#111111 300px,#111111 100%); /* W3C */
+background: -moz-linear-gradient(top, #4e4e4e 0%, #111111 300px, #111111 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(300px,#111111), color-stop(100%,#111111)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #4e4e4e 0%,#111111 300px,#111111 100%); /* IE10+ */
+background: linear-gradient(to bottom, #4e4e4e 0%,#111111 300px,#111111 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e4e', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
 	background-attachment: fixed;
 }
@@ -296,7 +301,6 @@ header nav {
 	border-bottom: solid 1px #437F0F;
 	
 	background-color: #59A618;
-	/*background: url(images/linear_bg_2.png);*/
 	background-repeat: repeat-x;
 	background-position: center top;
 	
@@ -304,6 +308,7 @@ header nav {
 	background-image: url(../img/bg-nav.png), -moz-linear-gradient(top, #7AB845, #437F0F);
 	background-image: url(../img/bg-nav.png), -ms-linear-gradient(top, #7AB845, #437F0F);
 	background-image: url(../img/bg-nav.png), linear-gradient(top, #7AB845, #437F0F);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AB845', endColorstr='#437F0F',GradientType=0 ); /* IE6-9 */
 	
 }
 
@@ -330,14 +335,8 @@ header nav li {
 	text-align: center;
 	border-right: 1px solid #427E0E;
 	
-	/*background: url(images/linear_bg_2.png);*/
 	background-repeat: repeat-x;  
-  /*
-	background-image: url(../img/bg-nav.png);
-	background-image: url(../img/bg-nav.png);
-	background-image: url(../img/bg-nav.png);
-	background-image: url(../img/bg-nav.png);
-*/	}
+}
 
 header nav li:first-child {
 	border-left: 1px solid #427E0E;
@@ -362,7 +361,6 @@ header nav .active a {
 	text-decoration: none;
 			
 	background-color: black;
-	/*background: url(images/linear_bg_2.png);*/
 	background-repeat: repeat-x; 
   
 	background-image: url(../img/bg-nav.png), -webkit-linear-gradient(top, #4F4F4F, #161616);
@@ -467,6 +465,7 @@ table#overzicht {
 		text-indent: 0px;
 		text-decoration: none;
 	}
+	.lt-ie9 td.onderwerp a { padding: 4px 0 6px; }
 		
 		tr.eindoordeel td.onderwerp a {		
 			font-size: 26px;
@@ -571,6 +570,7 @@ table#overzicht {
 nav.sub {
 	font-family: DINWeb-Cond, sans-serif;
 	text-transform: uppercase;
+	text-align: center;
 	font-weight: bold;
 	font-size: 30px;
 	line-height: 50px;
@@ -639,8 +639,11 @@ a.terug {
 	font-weight: bold;
 	font-size: 26px;
 	line-height: 30px;
-	padding: 15px 0 10px 30px;;
+	padding: 15px 0 10px 30px;
 	background: url(../img/icon-back-up.svg) no-repeat 0 18px;	
+}
+.lt-ie9 a.terug {	
+	background: url(../img/icon-back-up.png) no-repeat 0 18px;	
 }
 
 a.terug:hover {
@@ -649,6 +652,9 @@ a.terug:hover {
 
 #overlay a.terug {
 	background: url(../img/icon-back-left.svg) no-repeat 0 18px;
+}
+.lt-ie9 #overlay a.terug {
+	background: url(../img/icon-back-left.png) no-repeat 0 18px;
 }
 
 #overlay a.terug:hover {
@@ -698,6 +704,9 @@ footer a.twitter {
 	height: 35px;
 	width: 35px;
 }
+.lt-ie9 footer a.twitter {
+	background: url(../img/social-sprites.png) no-repeat;
+}
 
 footer .bof {
 	
@@ -718,6 +727,9 @@ footer a.facebook {
 	height: 35px;
 	width: 35px;
 }
+.lt-ie9 footer a.facebook {
+	background: url(../img/social-sprites.png) no-repeat -40px 0px;
+}
 
 footer a.facebook:hover {
 	background-position: -40px -35px;
@@ -729,6 +741,9 @@ footer a.bof {
 	background: url(../img/bof_logo_rgb.svg) no-repeat;
 	height: 60px;
 	width: 220px;
+}
+.lt-ie9 footer a.bof {
+	background: url(../img/bof_logo_rgb.png) no-repeat;
 }
 
 footer .license {
@@ -749,6 +764,9 @@ footer .largetosti a {
 	background: url(../img/logo-largetosti.svg) no-repeat 0px 25px;
 	height: 45px;
 	width: 100px;
+}
+.lt-ie9 footer .largetosti a {
+	background: url(../img/logo-largetosti.png) no-repeat 0px 25px;
 }
 
 footer .largetosti a:hover {
@@ -798,11 +816,16 @@ footer .largetosti a:hover {
 	height: 35px;
 	background: url(../img/icon-close.svg) no-repeat 10px 8px;
 }
+.lt-ie9 #overlay .close  {
+	background: url(../img/icon-close.png) no-repeat 10px 8px;
+}
 
 #overlay .close:hover {
 	cursor: pointer;
-	background: url(../img/icon-close.svg) no-repeat 10px -22px;
-	
+	background: url(../img/icon-close.svg) no-repeat 10px -22px;	
+}
+.lt-ie9 #overlay .close:hover {
+	background: url(../img/icon-close.png) no-repeat 10px -22px;
 }
 
 
