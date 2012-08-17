@@ -221,6 +221,39 @@ header nav .active a {
 	background-image: url(../img/bg-nav.png), linear-gradient(top, #4F4F4F, ##161616); 
 }
 
+.uitleg {
+	font-family: DINWeb-Cond, sans-serif;
+	font-size: 18px;
+	margin: 15px 0 0;
+}
+
+.uitleg > span {
+	font-weight: bold;
+	height: 32px;
+	font-size: 22px;
+	padding: 10px 0 0 0;
+	width: 56px;
+	display: inline-block;
+	text-align: center;
+	margin: 0 0 0 12px;
+	background: #EFEFEF;
+	color: #efefef;
+}
+
+.uitleg > span.vrij {
+background: #7BB847;
+color: #BDDBA3;
+}
+
+.uitleg > span.onvrij {
+background: #E13434;
+color: #F09999;
+}
+.uitleg > span.meh {
+background: #EDAB70;
+color: #F6D5B7;
+}
+
 .content {
 	background: white;
 	color: #222;
@@ -232,11 +265,11 @@ header nav .active a {
 .content p {
 	margin: 0 0 25px 0;
 }
-
+/*
 .content > div {
 	padding: 0 100px 0 0;
 }
-
+*/
 h1, h2, h3, h4, h5 {font-family: DINWeb-Cond, sans-serif; margin: 0;}
 
 h1 {
@@ -417,7 +450,7 @@ nav.sub {
 	font-weight: bold;
 	font-size: 30px;
 	line-height: 50px;
-	margin: 25px 0 0;
+	margin: 10px 0 0;
 	letter-spacing: -.03em;
 }
 
@@ -550,6 +583,8 @@ footer a.twitter {
 	width: 35px;
 }
 .lt-ie9 footer a.twitter {
+	display: block;
+	float: left;
 	background: url(../img/social-sprites.png) no-repeat;
 }
 
@@ -573,6 +608,8 @@ footer a.facebook {
 	width: 35px;
 }
 .lt-ie9 footer a.facebook {
+	display: block;
+	float: left;
 	background: url(../img/social-sprites.png) no-repeat -40px 0px;
 }
 
@@ -588,12 +625,14 @@ footer a.bof {
 	width: 220px;
 }
 .lt-ie9 footer a.bof {
+	display: block;
 	background: url(../img/bof_logo_rgb.png) no-repeat;
 }
 
 footer .license {
 	margin: 0 10px 0 0;
 }
+ 
 
 footer .privacy {
 	margin: 13px 50px 0 0;
@@ -625,6 +664,10 @@ footer .largetosti a:hover {
 	font-weight: normal;
 	bottom: -7px;
 	line-height: 0; position: relative; vertical-align: baseline;
+}
+.lt-ie9 .cc {
+	line-height: 25px;
+	bottom: 0;
 }
 
 #overlay {
